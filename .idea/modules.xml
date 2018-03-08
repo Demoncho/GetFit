@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GetFit.iml" filepath="$PROJECT_DIR$/GetFit.iml" />
-      <module fileurl="file://D:\Haskell Labs\GetFit\GetFit.iml" filepath="D:\Haskell Labs\GetFit\GetFit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Haskell Labs\GetFit\app\app.iml" filepath="D:\Haskell Labs\GetFit\app\app.iml" />
     </modules>
   </component>
 </project>
