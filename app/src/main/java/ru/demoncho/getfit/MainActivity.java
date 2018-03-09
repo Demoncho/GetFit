@@ -1,12 +1,6 @@
 package ru.demoncho.getfit;
 
-
-//import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,11 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.webkit.WebView;
+
+import ru.demoncho.getfit.Equipment.nav_equipment;
+import ru.demoncho.getfit.Food.nav_food;
+import ru.demoncho.getfit.Workout.nav_workout;
+import ru.demoncho.getfit.training.nav_training;
 
 
 public class MainActivity extends AppCompatActivity
@@ -28,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        displaySelectedScreen(R.id.nav_workout);
     }
 
     @Override
@@ -77,42 +74,37 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void displaySelectedScreen(int id){
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
         Fragment fragment = null;
 
-        switch(id){
-            case R.id.nav_workout:
-                fragment = new nav_workout();
-                break;
-            case R.id.nav_food:
-                fragment = new nav_food();
-                break;
-            case R.id.nav_training:
-                fragment = new nav_training();
-                break;
-            case R.id.nav_equipment:
-                fragment = new nav_equipment();
-                break;
+        int id = item.getItemId();
+
+        if (id == R.id.nav_workout){
+            fragment = new nav_workout();
+        }
+        else if (id == R.id.nav_food){
+            fragment = new nav_food();
+        }
+        else if (id == R.id.nav_training){
+            fragment = new nav_training();
+        }
+        else if (id == R.id.nav_equipment){
+            fragment = new nav_equipment();
         }
 
+
         if (fragment != null){
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_main, fragment);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.screen_area, fragment).addToBackStack("content_main");
             ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        displaySelectedScreen(id);
-
         return true;
     }
 }
