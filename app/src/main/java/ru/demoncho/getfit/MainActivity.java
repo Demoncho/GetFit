@@ -17,6 +17,7 @@ import ru.demoncho.getfit.Equipment.nav_equipment;
 import ru.demoncho.getfit.Food.nav_food;
 import ru.demoncho.getfit.Workout.nav_workout;
 import ru.demoncho.getfit.training.nav_training;
+import ru.demoncho.getfit.MainMenu.nav_mainmenu;
 
 
 public class MainActivity extends AppCompatActivity
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
 
     }
 
@@ -93,6 +95,9 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_equipment){
             fragment = new nav_equipment();
+        }
+        else if (id == R.id.nav_mainmenu){
+            fragment = new nav_mainmenu();
         }
 
 
