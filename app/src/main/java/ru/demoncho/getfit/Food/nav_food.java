@@ -38,8 +38,26 @@ public class nav_food extends Fragment {
     private void initImageBitmaps(View view){
         // без if создает копии каждый раз при нажатии, потом доделаем
         if (mItems.isEmpty()){
+            mItems_titles.add(getString(R.string.Massa_title));
+            mItems.add("Massa_description");
+
             mItems_titles.add(getString(R.string.Atkinson_title));
             mItems.add("Atkinson_description");
+
+            mItems_titles.add(getString(R.string.Kefir_title));
+            mItems.add("Kefir_description");
+
+            mItems_titles.add(getString(R.string.Ogranichenie_title));
+            mItems.add("Ogranichenie_description");
+
+            mItems_titles.add(getString(R.string.Japan_title));
+            mItems.add("Japan_description");
+
+            mItems_titles.add(getString(R.string.Razdelnoe_title));
+            mItems.add("Razdelnoe_description");
+
+            mItems_titles.add(getString(R.string.Drobnoe_title));
+            mItems.add("Drobnoe_description");
             //mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
         }
         initRecyclerView(view);
