@@ -11,7 +11,7 @@
         android:layout_weight="70"
         android:id="@+id/image"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/ser_20"/>
 
     <TextView
         android:layout_width="wrap_content"

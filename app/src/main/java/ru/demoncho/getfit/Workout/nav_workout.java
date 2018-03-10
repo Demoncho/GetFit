@@ -38,31 +38,25 @@ public class nav_workout extends Fragment {
         // без if создает копии каждый раз при нажатии, потом доделаем
         if (mNames.isEmpty() && mImageUrls.isEmpty()){
         mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
-        mNames.add("Havai");
+        mNames.add("Бицепс");
 
         mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-        mNames.add("Trondheim");
+        mNames.add("Грудь");
 
         mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        mNames.add("Portugal");
+        mNames.add("Ноги");
 
         mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-        mNames.add("Rocky Mountain National Park");
+        mNames.add("Плечи");
 
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        mNames.add("Mahahual");
+        mNames.add("Пресс");
 
         mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-        mNames.add("Frozen Lake");
+        mNames.add("Спина");
 
         mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-        mNames.add("White Sands Desert");
-
-        mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
-        mNames.add("Austrailia");
-
-        mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-        mNames.add("Washington");
+        mNames.add("Трицепс");
         }
 
         initRecyclerView(view);

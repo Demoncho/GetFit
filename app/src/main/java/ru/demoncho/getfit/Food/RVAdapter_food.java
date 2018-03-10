@@ -69,7 +69,7 @@ public class RVAdapter_food extends RecyclerView.Adapter<RVAdapter_food.ViewHold
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, mItem_titles.get(position), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, mItem_titles.get(position), Toast.LENGTH_SHORT).show();
                 Fragment argumentFragment = new item_food();
                 Bundle data = new Bundle();//create bundle instance
                 data.putString("titles", mItem_titles.get(position));
