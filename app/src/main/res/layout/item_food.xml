@@ -9,96 +9,26 @@
               android:layout_height="match_parent"
     android:weightSum="100">
 
-
     <TextView
         android:id="@+id/item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="left"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:text="Диета"
         android:textColor="#000"
         android:textStyle="bold"
-        android:textSize="24sp"/>
+        android:textSize="22sp"/>
 
     <TextView
-        android:id="@+id/item_protiv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="Противопоказания:"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/item_protiv_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Описание противопоказаний"
-        android:textColor="#000"
-        android:textSize="19sp" />
-
-    <TextView
-        android:id="@+id/item_srok"
+        android:id="@+id/item_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="Срок:"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/item_srok_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Описание срока"
-        android:textColor="#000"
-        android:textSize="19sp" />
-
-    <TextView
-        android:id="@+id/effect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Эффективность:"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/item_effect_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Описание эффективности"
-        android:textColor="#000"
-        android:textSize="19sp" />
-
-    <TextView
-        android:id="@+id/metod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Метод:"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/item_metod_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:text="Описание метода"
         android:textColor="#000"
-        android:textSize="19sp" />
+        android:textSize="18sp" />
 
 </LinearLayout></ScrollView>

@@ -23,13 +23,8 @@ import ru.demoncho.getfit.Workout.RVAdapter_workout;
  */
 
 public class nav_food extends Fragment {
-    private ArrayList<String> mItem_titles = new ArrayList<>();
-    private ArrayList<String> mItem_srok = new ArrayList<>();
-    private ArrayList<String> mItem_protiv = new ArrayList<>();
-    private ArrayList<String> mItem_effect = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
-    private ArrayList<String> mItem_metod = new ArrayList<>();
-
+    private ArrayList<String> mItems_titles = new ArrayList<>();
+    private ArrayList<String> mItems = new ArrayList<>();
 
     @Nullable
     @Override
@@ -42,23 +37,36 @@ public class nav_food extends Fragment {
     //Загружает картинки и названия для элементов списка
     private void initImageBitmaps(View view){
         // без if создает копии каждый раз при нажатии, потом доделаем
-        if (mItem_titles.isEmpty()){
-            mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
-            mItem_titles.add(getString(R.string.Atkinson_title));
-            mItem_protiv.add(getString(R.string.Atkinson_protiv));
-            mItem_srok.add(getString(R.string.Atkinson_srok));
-            mItem_effect.add(getString(R.string.Atkinson_effect));
-            Spanned sp = Html.fromHtml( getString(R.string.Atkinson_metod));
-            mItem_metod.add(sp.toString());
-        }
+        if (mItems.isEmpty()){
+            mItems_titles.add(getString(R.string.Massa_title));
+            mItems.add("Massa_description");
 
+            mItems_titles.add(getString(R.string.Atkinson_title));
+            mItems.add("Atkinson_description");
+
+            mItems_titles.add(getString(R.string.Kefir_title));
+            mItems.add("Kefir_description");
+
+            mItems_titles.add(getString(R.string.Ogranichenie_title));
+            mItems.add("Ogranichenie_description");
+
+            mItems_titles.add(getString(R.string.Japan_title));
+            mItems.add("Japan_description");
+
+            mItems_titles.add(getString(R.string.Razdelnoe_title));
+            mItems.add("Razdelnoe_description");
+
+            mItems_titles.add(getString(R.string.Drobnoe_title));
+            mItems.add("Drobnoe_description");
+            //mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
+        }
         initRecyclerView(view);
     }
 
     //Инициализация списка
     private void initRecyclerView(View view){
         RecyclerView recyclerView = view.findViewById(R.id.recyclerv_view);
-        RVAdapter_food adapter = new RVAdapter_food(this.getActivity(), mImageUrls, mItem_titles,  mItem_protiv, mItem_srok, mItem_effect, mItem_metod, getFragmentManager());
+        RVAdapter_food adapter = new RVAdapter_food(this.getActivity(), mItems_titles, mItems, getFragmentManager());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(this.getActivity(), LinearLayoutManager.VERTICAL));
