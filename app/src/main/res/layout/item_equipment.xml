@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scroll_equip"
+    android:id="@+id/scroll"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,33 +9,34 @@
         android:layout_height="match_parent"
         android:weightSum="100">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image_equip"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"/>
+        <TextView
+            android:id="@+id/item_title_equip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Тренажер"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
 
-    <TextView
-        android:id="@+id/item_title_equip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Диета"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="22sp"/>
+        <ImageView
+            android:id="@+id/image_equip"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:cropToPadding="false" />
 
-    <TextView
-        android:id="@+id/item_description_equip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Описание метода"
-        android:textColor="#000"
-        android:textSize="18sp" />
 
-</LinearLayout></ScrollView>
+        <TextView
+            android:id="@+id/item_description_equip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Описание тренажера"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+    </LinearLayout></ScrollView>

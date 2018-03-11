@@ -1,10 +1,10 @@
 package ru.demoncho.getfit.Equipment;
 
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.Resource;
 
 import ru.demoncho.getfit.R;
 
@@ -34,17 +33,19 @@ public class item_equipment extends Fragment {
 
     private void getIncomingArguments(View view){
         if(!(getArguments().getString("titles").isEmpty())){
-            String image = getArguments().getString("images");
             String title = getArguments().getString("titles");
             String item = getArguments().getString("items");
-            setContent(view, image, title, item, null);
+            String image = getArguments().getString("images");
+            setContent(view, title, item, image, null);
         }
     }
 
-    private void setContent(View view, String image, String title, String item, @Nullable Bundle savedInstanceState){
-        int resIdImage = getResources().getIdentifier(image, "drawable", PACKAGE_NAME);
+    private void setContent(View view, String title, String item, String image, @Nullable Bundle savedInstanceState){
         ImageView image1 = view.findViewById(R.id.image_equip);
-        Glide.with(this).asBitmap().load(resIdImage).into(image1);
+        Glide.with(this)
+                .asBitmap()
+                .load(image)
+                .into(image1);
 
         TextView tv_title = view.findViewById(R.id.item_title_equip);
         tv_title.setText(title);
