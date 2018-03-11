@@ -21,7 +21,8 @@ public class nav_workout extends Fragment {
     private static final String TAG = "Workout Fragment";
     //vars
     private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+    private ArrayList<Integer> mImageUrls = new ArrayList<>();
+    private ArrayList<Integer> first = new ArrayList<>();
 
     @Nullable
     @Override
@@ -33,30 +34,53 @@ public class nav_workout extends Fragment {
 
     //Загружает картинки и названия для элементов списка
     private void initImageBitmaps(View view){
-        Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
+        //Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
         // без if создает копии каждый раз при нажатии, потом доделаем
-        if (mNames.isEmpty() && mImageUrls.isEmpty()){
-        mImageUrls.add("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
+        if (mNames.isEmpty() && mImageUrls.isEmpty() && first.isEmpty()){
+        mImageUrls.add(R.drawable.biceps);
         mNames.add("Бицепс");
 
-        mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
+        mImageUrls.add(R.drawable.chest);
         mNames.add("Грудь");
 
-        mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
+        mImageUrls.add(R.drawable.legs);
         mNames.add("Ноги");
 
-        mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
+        mImageUrls.add(R.drawable.shoulders);
         mNames.add("Плечи");
 
-        mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
+        mImageUrls.add(R.drawable.press);
         mNames.add("Пресс");
 
-        mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
+        mImageUrls.add(R.drawable.back);
         mNames.add("Спина");
 
-        mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
+        mImageUrls.add(R.drawable.triceps);
         mNames.add("Трицепс");
+
+            first.add(R.drawable.ser_1);
+            first.add(R.drawable.ser_5);
+            first.add(R.drawable.ser_3);
+            first.add(R.drawable.ser_9);
+            first.add(R.drawable.ser_18);
+            first.add(R.drawable.ser_4);
+            first.add(R.drawable.ser_2);
+            first.add(R.drawable.ser_8);
+            first.add(R.drawable.ser_6);
+            first.add(R.drawable.ser_3);
+            first.add(R.drawable.ser_13);
+            first.add(R.drawable.ser_19);
+            first.add(R.drawable.ser_10);
+            first.add(R.drawable.ser_22);
+            first.add(R.drawable.ser_1);
+            first.add(R.drawable.ser_7);
+            first.add(R.drawable.ser_3);
+            first.add(R.drawable.ser_14);
+            first.add(R.drawable.ser_20);
+            first.add(R.drawable.ser_11);
+            first.add(R.drawable.ser_24);
+
         }
 
         initRecyclerView(view);
@@ -66,7 +90,7 @@ public class nav_workout extends Fragment {
     private void initRecyclerView(View view){
         Log.d(TAG, "initRecyclerView: init recyclerview.");
         RecyclerView recyclerView = view.findViewById(R.id.recyclerv_view);
-        RVAdapter_workout adapter = new RVAdapter_workout(this.getActivity(), mNames, mImageUrls, getFragmentManager());
+        RVAdapter_workout adapter = new RVAdapter_workout(this.getActivity(), mNames, mImageUrls,first, getFragmentManager());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(this.getActivity(), LinearLayoutManager.VERTICAL));

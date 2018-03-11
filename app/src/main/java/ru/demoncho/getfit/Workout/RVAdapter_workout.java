@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
+import java.util.List;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import ru.demoncho.getfit.R;
 
@@ -26,14 +28,22 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
     private static final String TAG = "RVAdapter_workout";
 
     private ArrayList<String> mImageNames = new ArrayList<>();
-    private ArrayList<String> mImages = new ArrayList<>();
+    private ArrayList<Integer> mImages = new ArrayList<>();
+
+    private List<Integer> mfirst;
+    private List<Integer> msecond;
+    private List<Integer> mthird
+            ;
     private Context mContext;
     public FragmentManager f_manager; // нужно для смены фрагментов между собой
 
-    public RVAdapter_workout(Context context, ArrayList<String> imageNames, ArrayList<String> images, FragmentManager f_manager) {
+    public RVAdapter_workout(Context context, ArrayList<String> imageNames, ArrayList<Integer> images,ArrayList<Integer> first, FragmentManager f_manager) {
         mImageNames = imageNames;
         mImages = images;
         mContext = context;
+        mfirst = first.subList(0,7);
+        msecond = first.subList(7,14);
+        mthird = first.subList(14,21);
         this.f_manager = f_manager;
     }
 
@@ -47,7 +57,7 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
     // действия при клике на элемент
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Log.d(TAG, "onBindViewHolder: called.");
+       // Log.d(TAG, "onBindViewHolder: called.");
 
         Glide.with(mContext)
                 .asBitmap()
@@ -59,15 +69,18 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
+                //Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
                 // Toast.makeText(mContext, mImageNames.get(position), Toast.LENGTH_SHORT).show();
 
-                Log.d(TAG, "commit: " + mImageNames.get(position));
+               // Log.d(TAG, "commit: " + mImageNames.get(position));
 
                 Fragment argumentFragment = new item_workout();
                 Bundle data = new Bundle();//create bundle instance
-                data.putString("image_url", mImages.get(position));
+               // data.putString("image_url", mImages.get(position));
                 data.putString("image_name", mImageNames.get(position));
+                data.putInt("first",mfirst.get(position));
+                data.putInt("second",msecond.get(position));
+                data.putInt("third",mthird.get(position));
                 argumentFragment.setArguments(data);
                 f_manager.beginTransaction().replace(R.id.screen_area, argumentFragment).addToBackStack("my_fragment").commit();
             }
