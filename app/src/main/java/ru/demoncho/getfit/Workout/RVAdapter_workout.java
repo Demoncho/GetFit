@@ -54,13 +54,13 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
                 .load(mImages.get(position))
                 .into(holder.image);
 
-        holder.imageName.setText(mImageNames.get(position));
+       holder.imageName.setText(mImageNames.get(position));
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: clicked on: " + mImageNames.get(position));
-                Toast.makeText(mContext, mImageNames.get(position), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(mContext, mImageNames.get(position), Toast.LENGTH_SHORT).show();
 
                 Log.d(TAG, "commit: " + mImageNames.get(position));
 

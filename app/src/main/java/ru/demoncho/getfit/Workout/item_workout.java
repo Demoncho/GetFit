@@ -53,8 +53,8 @@ public class item_workout extends Fragment {
 
         ImageView image = view.findViewById(R.id.image);
         Glide.with(this)
-                .asBitmap()
-                .load(imageUrl)
+                .asGif()
+                .load(R.drawable.ser_1)
                 .into(image);
     }
 
