@@ -34,16 +34,26 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
     private List<Integer> msecond;
     private List<Integer> mthird;
 
+    private List<String> dfirst;
+    private List<String> dsecond;
+    private List<String> dthird;
+
     private Context mContext;
     public FragmentManager f_manager; // нужно для смены фрагментов между собой
 
-    public RVAdapter_workout(Context context, ArrayList<String> imageNames, ArrayList<Integer> images,ArrayList<Integer> first, FragmentManager f_manager) {
+    public RVAdapter_workout(Context context, ArrayList<String> imageNames,ArrayList<String> imageDescroption ,ArrayList<Integer> images,ArrayList<Integer> first, FragmentManager f_manager) {
         mImageNames = imageNames;
         mImages = images;
+
         mContext = context;
         mfirst = first.subList(0,7);
         msecond = first.subList(7,14);
         mthird = first.subList(14,21);
+
+        dfirst = imageDescroption.subList(0,7);
+        dsecond = imageDescroption.subList(7,14);
+        dthird= imageDescroption.subList(14,21);
+
         this.f_manager = f_manager;
     }
 
@@ -78,9 +88,15 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
                 Bundle data = new Bundle();//create bundle instance
                // data.putString("image_url", mImages.get(position));
                 data.putString("image_name", mImageNames.get(position));
+
+                data.putString("dfirst",dfirst.get(position));
+                data.putString("dsecond",dsecond.get(position));
+                data.putString("dthird",dthird.get(position));
+
                 data.putInt("first",mfirst.get(position));
                 data.putInt("second",msecond.get(position));
                 data.putInt("third",mthird.get(position));
+
                 argumentFragment.setArguments(data);
                 f_manager.beginTransaction().replace(R.id.screen_area, argumentFragment).addToBackStack("my_fragment").commit();
             }

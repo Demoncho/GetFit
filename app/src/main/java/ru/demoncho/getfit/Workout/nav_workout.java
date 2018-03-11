@@ -21,6 +21,7 @@ public class nav_workout extends Fragment {
     private static final String TAG = "Workout Fragment";
     //vars
     private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mDescription = new ArrayList<>();
     private ArrayList<Integer> mImageUrls = new ArrayList<>();
     private ArrayList<Integer> first = new ArrayList<>();
 
@@ -81,6 +82,28 @@ public class nav_workout extends Fragment {
             first.add(R.drawable.ser_11);
             first.add(R.drawable.ser_24);
 
+            mDescription.add("ser1");
+            mDescription.add("ser5");
+            mDescription.add("ser3");
+            mDescription.add("ser9");
+            mDescription.add("ser18");
+            mDescription.add("ser4");
+            mDescription.add("ser2");
+            mDescription.add("ser8");
+            mDescription.add("ser6");
+            mDescription.add("ser3");
+            mDescription.add("ser13");
+            mDescription.add("ser19");
+            mDescription.add("ser10");
+            mDescription.add("ser22");
+            mDescription.add("ser1");
+            mDescription.add("ser7");
+            mDescription.add("ser3");
+            mDescription.add("ser14");
+            mDescription.add("ser20");
+            mDescription.add("ser11");
+            mDescription.add("ser24");
+
         }
 
         initRecyclerView(view);
@@ -90,7 +113,7 @@ public class nav_workout extends Fragment {
     private void initRecyclerView(View view){
        // Log.d(TAG, "initRecyclerView: init recyclerview.");
         RecyclerView recyclerView = view.findViewById(R.id.recyclerv_view);
-        RVAdapter_workout adapter = new RVAdapter_workout(this.getActivity(), mNames, mImageUrls,first, getFragmentManager());
+        RVAdapter_workout adapter = new RVAdapter_workout(this.getActivity(), mNames,mDescription, mImageUrls,first, getFragmentManager());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(this.getActivity(), LinearLayoutManager.VERTICAL));
