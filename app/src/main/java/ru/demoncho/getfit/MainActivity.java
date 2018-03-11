@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Fragment fragment = new nav_mainmenu();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.screen_area, fragment).addToBackStack("main_menu");
+        ft.commit();
     }
 
     @Override
