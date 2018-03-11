@@ -32,8 +32,8 @@ public class RVAdapter_workout extends RecyclerView.Adapter<RVAdapter_workout.Vi
 
     private List<Integer> mfirst;
     private List<Integer> msecond;
-    private List<Integer> mthird
-            ;
+    private List<Integer> mthird;
+
     private Context mContext;
     public FragmentManager f_manager; // нужно для смены фрагментов между собой
 

@@ -88,7 +88,7 @@ public class nav_workout extends Fragment {
 
     //Инициализация списка
     private void initRecyclerView(View view){
-        Log.d(TAG, "initRecyclerView: init recyclerview.");
+       // Log.d(TAG, "initRecyclerView: init recyclerview.");
         RecyclerView recyclerView = view.findViewById(R.id.recyclerv_view);
         RVAdapter_workout adapter = new RVAdapter_workout(this.getActivity(), mNames, mImageUrls,first, getFragmentManager());
         recyclerView.setAdapter(adapter);

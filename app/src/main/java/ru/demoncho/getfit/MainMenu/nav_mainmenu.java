@@ -18,7 +18,12 @@ public class nav_mainmenu extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.nav_mainmenu, null);
+
         return view;
+    }
+
+    public void onBicepsCLick(View view){
+
     }
 
     @Override
