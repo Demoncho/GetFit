@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Massa_title1">Набор мышечной массы</string>
+    <string name="Massa_description1" formatted="false"><![CDATA[<p> <strong> Понедельник(грудные мышцы и бицепсы)</strong> </p> <p> Жим штанги широким хватом на наклонной скамье. 4 подхода по 8 &ndash 12 раз </p> ]]></string>
+
+    <string name="Dry_title">Сушка тела</string>
+    <string name="Dry_description" formatted="false"><![CDATA[<p> <strong> Понедельник(грудные мышцы и бицепсы)</strong> </p> <p>  Жим штанги широким хватом на наклонной скамье. 4 подхода по 8 &ndash 12 раз </p>]]></string>
+
+    <string name="Xz_title">Не знаю</string>
+    <string name="Xz_description" formatted="false"><![CDATA[<p> <strong> Понедельник(грудные мышцы и бицепсы)</strong> </p> <p> Жим штанги широким хватом на наклонной скамье. 4 подхода по 8 &ndash 12 раз </p>]]></string>
+</resources>
