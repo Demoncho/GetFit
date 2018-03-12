@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GetFit.iml" filepath="$PROJECT_DIR$/GetFit.iml" />
       <module fileurl="file://E:\AndroidProjects\GetFit-test_branch\GetFit.iml" filepath="E:\AndroidProjects\GetFit-test_branch\GetFit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetFit-test_branch.iml" filepath="$PROJECT_DIR$/GetFit-test_branch.iml" />
       <module fileurl="file://D:\Haskell Labs\GetFit\GetFit-test_branch.iml" filepath="D:\Haskell Labs\GetFit\GetFit-test_branch.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
