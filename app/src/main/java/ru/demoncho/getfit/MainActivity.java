@@ -1,4 +1,3 @@
-
 package ru.demoncho.getfit;
 
 import android.content.Intent;
@@ -16,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.Button;
 
 import ru.demoncho.getfit.Equipment.nav_equipment;
 import ru.demoncho.getfit.Food.nav_food;
@@ -29,12 +29,11 @@ public class MainActivity extends AppCompatActivity
 
     public static String PACKAGE_NAME;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
         PACKAGE_NAME = getApplicationContext().getPackageName();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -45,14 +44,14 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
 
         Fragment fragment = new nav_mainmenu();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.screen_area, fragment).addToBackStack("main_menu");
+        ft.replace(R.id.screen_area, fragment);
         ft.commit();
     }
 
@@ -95,7 +94,6 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         Fragment fragment = null;
-
         int id = item.getItemId();
 
         if (id == R.id.nav_workout){
@@ -112,6 +110,11 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_mainmenu){
             fragment = new nav_mainmenu();
+        }
+        else if (id == R.id.nav_sign_out){
+            Intent goingBack = new Intent();
+            setResult(RESULT_OK, goingBack);
+            finish();
         }
 
         if (fragment != null){
