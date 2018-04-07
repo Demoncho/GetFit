@@ -1,3 +1,4 @@
+
 package ru.demoncho.getfit;
 
 import android.content.Intent;
@@ -28,12 +29,12 @@ public class MainActivity extends AppCompatActivity
 
     public static String PACKAGE_NAME;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
         PACKAGE_NAME = getApplicationContext().getPackageName();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -55,8 +56,10 @@ public class MainActivity extends AppCompatActivity
         ft.commit();
     }
 
+
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -110,7 +113,6 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_mainmenu){
             fragment = new nav_mainmenu();
         }
-
 
         if (fragment != null){
             FragmentManager fragmentManager = getSupportFragmentManager();
