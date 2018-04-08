@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 
 import ru.demoncho.getfit.Equipment.nav_equipment;
+import ru.demoncho.getfit.Favourites.nav_favourites;
 import ru.demoncho.getfit.Food.nav_food;
 import ru.demoncho.getfit.Workout.nav_workout;
 import ru.demoncho.getfit.training.nav_training;
@@ -110,6 +111,9 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_mainmenu){
             fragment = new nav_mainmenu();
+        }
+        else if (id == R.id.nav_favourites){
+            fragment = new nav_favourites();
         }
         else if (id == R.id.nav_sign_out){
             Intent goingBack = new Intent();

@@ -13,11 +13,11 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:background="@android:color/transparent"
-        android:paddingTop="15dp"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo1" />
+        android:text="GETFIT"
+        android:fontFamily="@font/new1"
+        android:textSize="30dp"
+        android:layout_gravity="center"/>
 </LinearLayout>

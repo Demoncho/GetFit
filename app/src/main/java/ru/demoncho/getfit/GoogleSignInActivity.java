@@ -50,8 +50,7 @@ public class GoogleSignInActivity extends BaseActivity implements
 
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
-        findViewById(R.id.sign_out_button).setOnClickListener(this);
-        findViewById(R.id.disconnect_button).setOnClickListener(this);
+
 
         // [START config_signin]
         // Configure Google Sign In
@@ -191,7 +190,7 @@ public class GoogleSignInActivity extends BaseActivity implements
             //mDetailTextView.setText(null);
 
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
+
         }
     }
 
