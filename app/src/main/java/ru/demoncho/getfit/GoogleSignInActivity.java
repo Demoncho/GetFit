@@ -2,10 +2,18 @@ package ru.demoncho.getfit;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.URLSpan;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -50,6 +58,33 @@ public class GoogleSignInActivity extends BaseActivity implements
 
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
+        final TextView offline = (TextView) findViewById(R.id.offline_button);
+
+        final CharSequence text = offline.getText();
+        final SpannableString notClickedString = new SpannableString(text);
+        notClickedString.setSpan(new UnderlineSpan(), 0, notClickedString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        offline.setText(notClickedString, TextView.BufferType.SPANNABLE);
+        final SpannableString clickedString = new SpannableString(notClickedString);
+        clickedString.setSpan(new BackgroundColorSpan(Color.GRAY), 0, notClickedString.length(),
+                Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        offline.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(final View v, final MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        offline.setText(clickedString);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        offline.setText(notClickedString, TextView.BufferType.SPANNABLE);
+                        goToMain();
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        offline.setText(notClickedString, TextView.BufferType.SPANNABLE);
+                        break;
+                }
+                return true;
+            }
+        });
 
 
         // [START config_signin]
@@ -181,9 +216,7 @@ public class GoogleSignInActivity extends BaseActivity implements
 
             //findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
-            Intent myIntent = new Intent(this, MainActivity.class);
-            final int result = 1;
-            startActivityForResult(myIntent, result);
+            goToMain();
 
         } else {
             //mStatusTextView.setText(R.string.signed_out);
@@ -192,6 +225,12 @@ public class GoogleSignInActivity extends BaseActivity implements
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
 
         }
+    }
+
+    private void goToMain(){
+        Intent myIntent = new Intent(this, MainActivity.class);
+        final int result = 1;
+        startActivityForResult(myIntent, result);
     }
 
     @Override

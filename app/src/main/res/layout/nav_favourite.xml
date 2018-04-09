@@ -17,7 +17,7 @@
         android:textStyle="bold"
         android:textSize="30dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/fav_food_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:text="Избранная диета не выбрана"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="13sp"
         />
 
     <TextView
@@ -40,7 +40,7 @@
         android:textStyle="bold"
         android:textSize="30dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/fav_training_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,6 +48,6 @@
         android:layout_marginTop="10dp"
         android:text="Избранная программа тренировок не выбрана"
         android:textColor="#000"
-        android:textSize="18sp" />
+        android:textSize="13sp" />
 
 </LinearLayout>
