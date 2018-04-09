@@ -36,12 +36,17 @@ public class nav_training extends Fragment {
             mItems_titles.add(getString(R.string.Massa_title1));
             mItems.add("Massa_description1");
 
+            mItems_titles.add(getString(R.string.Massa_title2));
+            mItems.add("Massa_description2");
+
             mItems_titles.add(getString(R.string.Dry_title));
             mItems.add("Dry_description");
 
-            mItems_titles.add(getString(R.string.Xz_title));
-            mItems.add("Xz_description");
+            mItems_titles.add(getString(R.string.BaseW_title));
+            mItems.add("BaseW_description");
 
+            mItems_titles.add(getString(R.string.BaseM_title));
+            mItems.add("BaseM_description");
         }
         initRecyclerView(view);
     }

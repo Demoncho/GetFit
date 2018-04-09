@@ -25,7 +25,7 @@ import ru.demoncho.getfit.Workout.RVAdapter_workout;
 public class nav_equipment extends Fragment {
     private ArrayList<String> mItems_titles = new ArrayList<>();
     private ArrayList<String> mItems = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+    private ArrayList<Integer> mImageUrls = new ArrayList<>();
 
     @Nullable
     @Override
@@ -42,31 +42,31 @@ public class nav_equipment extends Fragment {
 
             mItems_titles.add(getString(R.string.Velo_title));
             mItems.add("Vello_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f5702/XF2CtOMT5Rc.jpg");
+            mImageUrls.add(R.drawable.velo);
 
             mItems_titles.add(getString(R.string.Beg_title));
             mItems.add("Beg_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f5752/sYmZfs2iNfU.jpg");
+            mImageUrls.add(R.drawable.beg);
 
             mItems_titles.add(getString(R.string.Ellipt_title));
             mItems.add("Ellipt_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f577c/26LN-_C_AXI.jpg");
+            mImageUrls.add(R.drawable.elipt);
 
             mItems_titles.add(getString(R.string.Stepper_title));
             mItems.add("Stepper_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f57a2/Cd1JnR-XaK0.jpg");
+            mImageUrls.add(R.drawable.stepper);
 
             mItems_titles.add(getString(R.string.Grebnoy_title));
             mItems.add("Grebnoy_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f57c6/1kThvqQy5Vg.jpg");
+            mImageUrls.add(R.drawable.grebnoy);
 
             mItems_titles.add(getString(R.string.Tyaga_title));
             mItems.add("Tyaga_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f57cd/kOwH3pEhR4g.jpg");
+            mImageUrls.add(R.drawable.tyaga);
 
             mItems_titles.add(getString(R.string.Razgib_title));
             mItems.add("Razgib_description");
-            mImageUrls.add("https://pp.userapi.com/c834201/v834201363/f57d4/AvYYez5-r64.jpg");
+            mImageUrls.add(R.drawable.razgib);
         }
         initRecyclerView(view);
     }
