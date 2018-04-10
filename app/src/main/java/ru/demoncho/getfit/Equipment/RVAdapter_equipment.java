@@ -30,12 +30,12 @@ public class RVAdapter_equipment extends RecyclerView.Adapter<RVAdapter_equipmen
 
     private ArrayList<String> mItems_titles = new ArrayList<>();
     private ArrayList<String> mItems = new ArrayList<>();
-    private ArrayList<String> mImages = new ArrayList<>();
+    private ArrayList<Integer> mImages = new ArrayList<>();
 
     private Context mContext;
     public FragmentManager f_manager; // нужно для смены фрагментов между собой
 
-    public RVAdapter_equipment(Context context, ArrayList<String> titles, ArrayList<String> items, ArrayList<String> images, FragmentManager f_manager) {
+    public RVAdapter_equipment(Context context, ArrayList<String> titles, ArrayList<String> items, ArrayList<Integer> images, FragmentManager f_manager) {
         mItems_titles = titles;
         mItems = items;
         mImages = images;
@@ -67,7 +67,7 @@ public class RVAdapter_equipment extends RecyclerView.Adapter<RVAdapter_equipmen
                 Bundle data = new Bundle();//create bundle instance
                 data.putString("titles", mItems_titles.get(position));
                 data.putString("items", mItems.get(position));
-                data.putString("images", mImages.get(position));
+                data.putInt("images", mImages.get(position));
                 argumentFragment.setArguments(data);
                 f_manager.beginTransaction().replace(R.id.screen_area, argumentFragment).addToBackStack("my_fragment1").commit();
             }

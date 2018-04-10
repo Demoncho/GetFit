@@ -35,12 +35,12 @@ public class item_equipment extends Fragment {
         if(!(getArguments().getString("titles").isEmpty())){
             String title = getArguments().getString("titles");
             String item = getArguments().getString("items");
-            String image = getArguments().getString("images");
+            Integer image = getArguments().getInt("images");
             setContent(view, title, item, image, null);
         }
     }
 
-    private void setContent(View view, String title, String item, String image, @Nullable Bundle savedInstanceState){
+    private void setContent(View view, String title, String item, Integer image, @Nullable Bundle savedInstanceState){
         ImageView image1 = view.findViewById(R.id.image_equip);
         Glide.with(this)
                 .asBitmap()
