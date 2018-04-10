@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         Fragment fragment = null;
         int id = item.getItemId();
-
         if (id == R.id.nav_workout){
             fragment = new nav_workout();
         }

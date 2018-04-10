@@ -51,6 +51,9 @@ public class nav_favourites extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.nav_favourite, null);
+        System.runFinalization();
+        Runtime.getRuntime().gc();
+        System.gc();
         initFavourites(view);
         return view;
     }
