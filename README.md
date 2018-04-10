@@ -1,2 +1,2 @@
 # GetFit
-Ссылка на apk-файл https://www.dropbox.com/s/g7f7ydek8n6uzk1/GetFit.apk?dl=0
+Ссылка на apk-файл https://www.dropbox.com/s/3b21isox971y0sy/GetFit.apk?dl=0
